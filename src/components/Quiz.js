@@ -7,8 +7,8 @@ export default function Quiz(){
   const [quizState, dispatch] = useQuizContext()
 
   return(
-    <div>
-      <div className="score">
+    <div className='quiz'>
+      <div className='score'>
         Question: {quizState.currentQuestionIndex + 1} / {quizState.questions.length}
       </div>
       <Question />
