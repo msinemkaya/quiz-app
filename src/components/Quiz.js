@@ -6,9 +6,15 @@ export default function Quiz(){
   // quizState is the initialState and/or state as mentioned in quiz.js
   const [quizState, dispatch] = useQuizContext()
 
-  const handleClick = () => {
+  const handleNextQuestion = () => {
     dispatch({
       type: 'NEXT_QUESTION'
+    })
+  }
+
+  const handleRestart = () => {
+    dispatch({
+      type: 'RESTART'
     })
   }
 
@@ -24,6 +30,7 @@ export default function Quiz(){
             <div className=''>
               You've got {quizState.correctAnswerCount} of {quizState.questions.length} right.
             </div>
+            <div className='next-button' onClick={handleRestart}>Restart</div>
           </div>
         </div>
       )}
@@ -33,7 +40,7 @@ export default function Quiz(){
             Question: {quizState.currentQuestionIndex + 1} / {quizState.questions.length}
           </div>
           <Question />
-          <div className='next-button' onClick={handleClick}>Next Question</div>
+          <div className='next-button' onClick={handleNextQuestion}>Next Question</div>
         </>
      )}
     </div>

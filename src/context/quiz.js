@@ -22,6 +22,10 @@ const reducer = (state, action) => {
         showResults
       }
     }
+
+    case 'RESTART': {
+      return initialState
+    }
   }
 }
 
