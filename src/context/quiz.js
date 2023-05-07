@@ -3,13 +3,25 @@ import questions from '../data'
 
 const initialState = {
   questions,
-  currentQuestionIndex: 0
+  currentQuestionIndex: 0,
+  showResults: false
 };
 
 // we are passing 2 arguments state and action
 // state is as obvious our state and action is what action should that state take
 const reducer = (state, action) => {
-  return state;
+  switch (action.type) {
+    case 'NEXT_QUESTION': {
+      const showResults = state.currentQuestionIndex === state.questions.length -1
+      const index =  state.currentQuestionIndex
+      const currentQuestionIndex = showResults ? index : index + 1
+      return {
+        ...state,
+        currentQuestionIndex,
+        showResults
+      }
+    }
+  }
 }
 
 export const QuizContext = createContext()
