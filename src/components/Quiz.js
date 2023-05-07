@@ -4,8 +4,10 @@ import useQuizContext from '../hooks/quiz-context-hook';
 export default function Quiz(){
   
   // quizState is the initialState and/or state as mentioned in quiz.js
+  // useQuizContext is a custom hook that I created
   const [quizState, dispatch] = useQuizContext()
 
+  // instead of using state we use reducer. so we use dispatch to let reducer know the type of the action that it should take
   const handleNextQuestion = () => {
     dispatch({
       type: 'NEXT_QUESTION'
