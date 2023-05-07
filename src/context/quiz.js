@@ -19,10 +19,13 @@ const reducer = (state, action) => {
       const showResults = state.currentQuestionIndex === state.questions.length -1
       const index =  state.currentQuestionIndex
       const currentQuestionIndex = showResults ? index : index + 1
+      const answers = showResults ? [] : shuffleAnswer(state.questions[currentQuestionIndex])
       return {
         ...state,
         currentQuestionIndex,
-        showResults
+        showResults,
+        answers,
+        currentAnswer: ''
       }
     }
 
