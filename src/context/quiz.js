@@ -1,6 +1,6 @@
 import { createContext, useReducer } from "react";
 
-const initalState = {};
+const initialState = {};
 
 // we are passing 2 arguments state and action
 // state is as obvious our state and action is what action should that state take
