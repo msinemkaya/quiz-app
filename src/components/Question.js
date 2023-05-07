@@ -1,4 +1,5 @@
 import useQuizContext from "../hooks/quiz-context-hook";
+import Answer from '../components/Answer'
 
 export default function Question(){
   
@@ -9,6 +10,11 @@ export default function Question(){
     <>
       <div className="question">
         {currentQuestion.question}
+      </div>
+      <div className='answers'>
+        {quizState.answers.map((answer, index) => (
+          <Answer answerText={answer} key={index} />
+        ))}
       </div>
     </>
   );
