@@ -7,7 +7,8 @@ const initialState = {
   currentQuestionIndex: 0,
   showResults: false,
   correctAnswerCount: 0,
-  answers: shuffleAnswer(questions[0])
+  answers: shuffleAnswer(questions[0]),
+  currentAnswer: '',
 };
 
 // we are passing 2 arguments state and action
@@ -27,6 +28,17 @@ const reducer = (state, action) => {
 
     case 'RESTART': {
       return initialState
+    }
+
+    case 'SELECT_ANSWER': {
+      const correctAnswerCount = action.payload === state.questions[state.currentQuestionIndex].correctAnswer 
+      ? state.correctAnswerCount +1 
+      : state.correctAnswerCount
+      return {
+        ...state,
+        currentAnswer: action.payload,
+        correctAnswerCount,
+      }
     }
   }
 }
