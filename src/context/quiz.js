@@ -4,7 +4,8 @@ import questions from '../data'
 const initialState = {
   questions,
   currentQuestionIndex: 0,
-  showResults: false
+  showResults: false,
+  correctAnswerCount: 0,
 };
 
 // we are passing 2 arguments state and action
