@@ -16,6 +16,13 @@ export const QuizProvider = ({ children }) => {
   // when you have too many of them. it takes 2 arguments; initalState same as useState
   // and a reducer function where you store all your actions with that state ( like delete, add, edit) and 
   // what will happen if that action is taken.
+
+  // normally it is used as
+  // const [state, dispatch] = useReducer(reducer, initialState);
+  // so this means value is containing the state and the dispatch
+  // dispatch is what you use in handlers to pass the information of what the
+  // type of action is and any other necessary information for reducer function to use
+  // state is well as you might guess our initialState and/or state alltogether
   const value = useReducer(reducer, initialState)
 
   return(
