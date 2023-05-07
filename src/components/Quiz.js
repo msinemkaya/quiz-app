@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import { QuizContext } from "../context/quiz";
 import Question from '../components/Question'
+import useQuizContext from '../hooks/quiz-context-hook';
 
 export default function Quiz(){
   
   // quizState is the initialState and/or state as mentioned in quiz.js
-  const [quizState, dispatch] = useContext(QuizContext)
+  const [quizState, dispatch] = useQuizContext()
 
   return(
     <div>
